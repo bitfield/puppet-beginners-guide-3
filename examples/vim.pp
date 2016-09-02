@@ -1,0 +1,3 @@
+package { 'vim':
+  ensure => installed,
+}
