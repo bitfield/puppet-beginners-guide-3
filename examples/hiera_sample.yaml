@@ -1,0 +1,10 @@
+---
+  backup_path: '/backup'
+  backup_retention_days: 10
+  gitlab_backup_path: '/backup/gitlab'
+  gitlab_retention_days: 5
+  php: 'php56w'
+  upload_max_filesize: '10M'
+  post_max_size: '10M'
+  consul_node: true
+  apache_worker_factor: 100

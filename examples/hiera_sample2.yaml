@@ -1,0 +1,10 @@
+---
+  syslog_server: '10.170.81.32'
+  monitor_ips:
+    - '10.179.203.46'
+    - '212.100.235.160'
+    - '10.181.120.77'
+    - '94.236.56.148'
+  cobbler_config:
+    manage_dhcp: 1
+    pxe_just_once: 1
