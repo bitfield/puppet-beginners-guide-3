@@ -12,6 +12,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
+  # If you have trouble running the 64-bit Vagrant VM, try this instead:
+  # config.vm.box = "puppetlabs/ubuntu-16.04-32-puppet"
   config.vm.box = "puppetlabs/ubuntu-16.04-64-puppet"
 
   # Disable automatic box update checking. If you disable this, then
