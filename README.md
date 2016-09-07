@@ -6,7 +6,7 @@ If you're already using Puppet, you can dive straight in and look at the example
 
 Throughout the book, we'll be developing a complete, working example infrastructure, which you can use as a basis for your own. Check back here every so often to see how it's progressing!
 
-If you're new to Puppet, a great way to try it out quickly is to use a Vagrant virtual machine, which will run on your own computer, and there's a specific (Vagrant image)[https://atlas.hashicorp.com/puppetlabs/boxes/ubuntu-16.04-64-puppet] recommended for use with this book. Follow the instructions below to install Virtualbox and Vagrant, and you'll be able to run the examples in this repo in just a few minutes.
+If you're new to Puppet, a great way to try it out quickly is to use a Vagrant virtual machine, which will run on your own computer, and there's a specific [Vagrant image](https://atlas.hashicorp.com/puppetlabs/boxes/ubuntu-16.04-64-puppet) recommended for use with this book. Follow the instructions below to install Virtualbox and Vagrant, and you'll be able to run the examples in this repo in just a few minutes.
 
   1. Download and install [Virtualbox](https://www.virtualbox.org/)
 
