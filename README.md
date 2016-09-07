@@ -1,5 +1,8 @@
 # The Puppet Beginner's Guide, 2nd Edition
 
+
+![It's great having a robot butler](http://bitfieldconsulting.com/files/1240_03_01_small.png)
+
 Keyboards wear out; that's a scientific fact. As a small measure to prevent this, I'm making all the code examples in the forthcoming second edition of [The Puppet Beginner's Guide](http://bitfieldconsulting.com/pbg) freely available to download and use in this repo, so you don't have to type them in from the book. You'll find them in the [examples](https://github.com/bitfield/puppet-beginners-guide/tree/master/examples) directory. 
 
 If you're already using Puppet, you can dive straight in and look at the examples. You can read, use, and modify them without needing to buy the book, although obviously I will be happier if you do. (Buy two copies, in case you leave one on the bus by mistake.)
