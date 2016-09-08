@@ -3,7 +3,7 @@ package { 'openssh-server':
 }
 
 file { '/etc/ssh/sshd_config':
-  source => '/vagrant/examples/ssh/sshd_config',
+  source => '/vagrant/examples/files/sshd_config',
   notify => Service['sshd'],
 }
 
