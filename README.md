@@ -34,7 +34,7 @@ If you're new to Puppet, a great way to try it out quickly is to use a Vagrant v
 
   1. Try the 'Hello, world' example:
 
-        puppet apply /vagrant/examples/hello.pp
+        puppet apply /vagrant/examples/file_hello.pp
         Notice: Compiled catalog for localhost in environment production in 0.07 seconds
         Notice: /Stage[main]/Main/File[/tmp/hello.txt]/ensure: defined content as '{md5}22c3683b094136c3398391ae71b20f04'
         Notice: Applied catalog in 0.01 seconds
