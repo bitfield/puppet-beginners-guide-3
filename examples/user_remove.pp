@@ -1,0 +1,3 @@
+user { 'godot':
+  ensure => absent,
+}
