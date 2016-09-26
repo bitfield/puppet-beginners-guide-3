@@ -1,2 +1,2 @@
 ---
-  backup_path: "/backup/%{::hostname}"
+  backup_path: "/backup/%{facts.networking.hostname}"

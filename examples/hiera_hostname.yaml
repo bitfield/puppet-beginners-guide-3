@@ -1,8 +1,3 @@
----
-:backends:
-  - yaml
-:yaml:
-  :datadir: "/etc/puppetlabs/code/environments/%{environment}/hieradata"
 :hierarchy:
-  - "%{::hostname}"
+  - nodes/"%{facts.networking.hostname}"
   - common

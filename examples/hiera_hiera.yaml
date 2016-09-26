@@ -1,0 +1,9 @@
+---
+  ips:
+    home: '130.190.0.1'
+    office1: '74.12.203.14'
+    office2: '95.170.0.75'
+  firewall_allow_list:
+    - "%{hiera('ips.home')}"
+    - "%{hiera('ips.office1')}"
+    - "%{hiera('ips.office2')}"
