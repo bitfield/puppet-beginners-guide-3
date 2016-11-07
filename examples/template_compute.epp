@@ -1,0 +1,1 @@
+innodb_buffer_pool_size=<%= $facts['memory']['system']['total_bytes'] * 3/4 %>

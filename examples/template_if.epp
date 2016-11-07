@@ -1,0 +1,5 @@
+<% if $primary_db_server { -%>
+archive_mode = on
+<% } else {-%>
+archive_mode = off
+<% } -%>

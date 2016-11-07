@@ -1,0 +1,22 @@
+---
+  users:
+    'katy':
+      ensure: present
+      uid: 1900
+      shell: '/bin/bash'
+    'lark':
+      ensure: present
+      uid: 1901
+      shell: '/bin/zsh'
+    'bridget':
+      ensure: present
+      uid: 1902
+      shell: '/bin/bash'
+    'hsing-hui':
+      ensure: present
+      uid: 1903
+      shell: '/bin/tcsh'
+    'charles':
+      ensure: present
+      uid: 1904
+      shell: '/bin/bash'
