@@ -7,7 +7,7 @@
     'lark':
       ensure: present
       uid: 1901
-      shell: '/bin/zsh'
+      shell: '/bin/sh'
     'bridget':
       ensure: present
       uid: 1902
@@ -15,7 +15,7 @@
     'hsing-hui':
       ensure: present
       uid: 1903
-      shell: '/bin/tcsh'
+      shell: '/bin/sh'
     'charles':
       ensure: present
       uid: 1904
