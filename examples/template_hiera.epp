@@ -1,0 +1,3 @@
+AllowUsers<% hiera('users').each | $user | { -%>
+ <%= $user -%>
+<% } %> 
