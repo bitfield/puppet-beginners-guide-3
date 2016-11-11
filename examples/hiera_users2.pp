@@ -1,4 +1,4 @@
-hiera_hash('users').each | String $username, Hash $attrs | {
+hiera('users').each | String $username, Hash $attrs | {
   user { $username:
     * => $attrs,
   }
