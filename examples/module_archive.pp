@@ -1,3 +1,7 @@
+file { '/var/www':
+  ensure => directory,
+}
+
 archive { '/tmp/wordpress.tar.gz':
   ensure       => present,
   extract      => true,
