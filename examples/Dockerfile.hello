@@ -1,0 +1,3 @@
+FROM library/alpine
+MAINTAINER John Arundel <john@bitfieldconsulting.com>
+CMD /bin/echo Hello, world
