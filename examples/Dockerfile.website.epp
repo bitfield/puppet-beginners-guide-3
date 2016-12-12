@@ -1,0 +1,8 @@
+<% | String $git_url | -%>
+FROM nginx:alpine
+MAINTAINER John Arundel <john@bitfieldconsulting.com>
+RUN apk update \
+  && apk add git \
+  && cd /usr/share/nginx \
+  && mv html html.orig \
+  && git clone <%= $git_url %> html

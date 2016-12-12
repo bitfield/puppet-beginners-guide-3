@@ -1,0 +1,4 @@
+<% | String $message | -%>
+FROM nginx:alpine
+MAINTAINER John Arundel <john@bitfieldconsulting.com>
+RUN echo "<%= $message %>" >/usr/share/nginx/html/index.html
