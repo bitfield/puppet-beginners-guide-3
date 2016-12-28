@@ -1,0 +1,4 @@
+FROM nginx:alpine
+MAINTAINER John Arundel <john@bitfieldconsulting.com>
+RUN apk update \
+  && apk add redis
