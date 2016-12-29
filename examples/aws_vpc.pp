@@ -1,0 +1,59 @@
+$ami = 'YOUR_AMI_ID'
+$region = 'us-east-1'
+
+ec2_vpc { 'pbg-vpc':
+  ensure     => present,
+  region     => $region,
+  cidr_block => '10.0.0.0/16',
+}
+
+ec2_vpc_internet_gateway { 'pbg-igw':
+  ensure => present,
+  region => $region,
+  vpc    => 'pbg-vpc',
+}
+
+ec2_vpc_routetable { 'pbg-rt':
+  ensure => present,
+  region => $region,
+  vpc    => 'pbg-vpc',
+  routes => [
+    {
+      destination_cidr_block => '10.0.0.0/16',
+      gateway                => 'local'
+    },{
+      destination_cidr_block => '0.0.0.0/0',
+      gateway                => 'pbg-igw'
+    },
+  ],
+}
+
+ec2_vpc_subnet { 'pbg-subnet':
+  vpc               => 'pbg-vpc',
+  region            => $region,
+  cidr_block        => '10.0.0.0/24',
+  availability_zone => "${region}a",
+  route_table       => 'pbg-rt',
+}
+
+ec2_securitygroup { 'pbg-vpc-sg':
+  description => 'PBG security group',
+  region      => $region,
+  vpc         => 'pbg-vpc',
+  ingress     =>  [{
+    protocol => 'tcp',
+    port     => 22,
+    cidr     => '0.0.0.0/0',
+  }],
+}
+
+ec2_instance { 'pbg-demo':
+  ensure                      => present,
+  region                      => $region,
+  subnet                      => 'pbg-subnet',
+  security_groups             => 'pbg-vpc-sg',
+  image_id                    => $ami,
+  instance_type               => 't1.micro',
+  associate_public_ip_address => true,
+  key_name                    => 'pbg',
+}
