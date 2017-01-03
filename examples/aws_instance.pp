@@ -2,10 +2,11 @@ $ami = 'YOUR_AMI_ID'
 $region = 'us-east-1'
 
 ec2_securitygroup { 'pbg-sg':
+  ensure      =>  present,
   description => 'PBG security group',
   region      => $region,
   vpc         => 'default-vpc',
-  ingress     =>  [{
+  ingress     => [{
     protocol => 'tcp',
     port     => 22,
     cidr     => '0.0.0.0/0',

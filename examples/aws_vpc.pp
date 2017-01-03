@@ -29,6 +29,7 @@ ec2_vpc_routetable { 'pbg-rt':
 }
 
 ec2_vpc_subnet { 'pbg-subnet':
+  ensure            => present,
   vpc               => 'pbg-vpc',
   region            => $region,
   cidr_block        => '10.0.0.0/24',
@@ -37,6 +38,7 @@ ec2_vpc_subnet { 'pbg-subnet':
 }
 
 ec2_securitygroup { 'pbg-vpc-sg':
+  ensure            => present,
   description => 'PBG security group',
   region      => $region,
   vpc         => 'pbg-vpc',
