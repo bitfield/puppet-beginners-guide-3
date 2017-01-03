@@ -1,0 +1,52 @@
+---
+  ami: 'YOUR_AMI_ID'
+  region: 'us-east-1'
+  aws_resources:
+    'ec2_vpc':
+      'pbg-vpc':
+        ensure: present
+        region: "%{hiera('region')}"
+        cidr_block: '10.0.0.0/16'
+    'ec2_vpc_internet_gateway':
+      'pbg-igw':
+        ensure: present
+        region: "%{hiera('region')}"
+        vpc: 'pbg-vpc'
+    'ec2_vpc_routetable':
+      'pbg-rt':
+        ensure: present
+        region: "%{hiera('region')}"
+        vpc   : 'pbg-vpc'
+        routes:
+          - destination_cidr_block: '10.0.0.0/16'
+            gateway: 'local'
+          - destination_cidr_block: '0.0.0.0/0'
+            gateway: 'pbg-igw'
+    'ec2_vpc_subnet':
+      'pbg-subnet':
+        ensure: present
+        region: "%{hiera('region')}"
+        vpc: 'pbg-vpc'
+        cidr_block: '10.0.0.0/24'
+        availability_zone: "%{hiera('region')}a"
+        route_table: 'pbg-rt'
+    'ec2_securitygroup':
+      'pbg-vpc-sg':
+        ensure: present
+        description: 'PBG security group'
+        region: "%{hiera('region')}"
+        vpc: 'pbg-vpc'
+        ingress:
+          - protocol: 'tcp'
+            port: 22
+            cidr: '0.0.0.0/0'
+    'ec2_instance':
+      'pbg-demo':
+        ensure: present
+        region: "%{hiera('region')}"
+        subnet: 'pbg-subnet'
+        security_groups: 'pbg-vpc-sg'
+        image_id: "%{hiera('ami')}"
+        instance_type: 't1.micro'
+        associate_public_ip_address: true
+        key_name: 'pbg'
