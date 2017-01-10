@@ -1,13 +1,13 @@
-package { 'openssh-server':
+package { 'mysql-server':
   ensure => installed,
 }
 
-file { '/etc/ssh/sshd_config':
-  source => '/vagrant/examples/files/sshd_config',
-  notify => Service['sshd'],
+file { '/etc/mysql/mysql.cnf':
+  source => '/vagrant/examples/files/mysql.cnf',
+  notify => Service['mysql'],
 }
 
-service { 'sshd':
+service { 'mysql':
   ensure => running,
   enable => true,
 }
