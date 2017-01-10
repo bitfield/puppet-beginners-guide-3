@@ -1,3 +1,3 @@
 package { 'openssl':
-  ensure => '1.0.2g-1ubuntu4.2',
+  ensure => '1.0.2g-1ubuntu4.1',
 }
