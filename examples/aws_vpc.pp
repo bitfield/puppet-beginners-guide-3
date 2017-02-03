@@ -38,7 +38,7 @@ ec2_vpc_subnet { 'pbg-subnet':
 }
 
 ec2_securitygroup { 'pbg-vpc-sg':
-  ensure            => present,
+  ensure      => present,
   description => 'PBG security group',
   region      => $region,
   vpc         => 'pbg-vpc',
