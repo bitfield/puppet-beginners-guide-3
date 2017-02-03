@@ -4,9 +4,8 @@ class ntp (
   String[1] $version = 'installed',
   Enum['running', 'stopped'] $service_state = 'running',
 ) {
-  package { 'ntp':
-    ensure => $version,
-  }
+  ensure_packages(['ntp'],
+    { 'ensure' => $version })
 
   service { 'ntp':
     ensure => $service_state,

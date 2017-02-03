@@ -1,5 +1,2 @@
-package { [ 'aws-sdk-core',
-            'retries']:
-  ensure   => installed,
-  provider => puppet_gem,
-}
+ensure_packages(['aws-sdk-core', 'retries'],
+  { 'provider' => 'puppet_gem' })
