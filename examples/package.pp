@@ -1,3 +1,3 @@
-package { 'vim':
+package { 'cowsay':
   ensure => installed,
 }
