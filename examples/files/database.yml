@@ -1,0 +1,6 @@
+development:
+  adapter: mysql
+  database: dev_db
+  username: root
+  password:
+  socket: /tmp/mysql.sock
