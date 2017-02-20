@@ -5,17 +5,17 @@
     'ec2_vpc':
       'pbg-vpc':
         ensure: present
-        region: "%{hiera('region')}"
+        region: "%{lookup('region')}"
         cidr_block: '10.0.0.0/16'
     'ec2_vpc_internet_gateway':
       'pbg-igw':
         ensure: present
-        region: "%{hiera('region')}"
+        region: "%{lookup('region')}"
         vpc: 'pbg-vpc'
     'ec2_vpc_routetable':
       'pbg-rt':
         ensure: present
-        region: "%{hiera('region')}"
+        region: "%{lookup('region')}"
         vpc   : 'pbg-vpc'
         routes:
           - destination_cidr_block: '10.0.0.0/16'
@@ -25,16 +25,16 @@
     'ec2_vpc_subnet':
       'pbg-subnet':
         ensure: present
-        region: "%{hiera('region')}"
+        region: "%{lookup('region')}"
         vpc: 'pbg-vpc'
         cidr_block: '10.0.0.0/24'
-        availability_zone: "%{hiera('region')}a"
+        availability_zone: "%{lookup('region')}a"
         route_table: 'pbg-rt'
     'ec2_securitygroup':
       'pbg-vpc-sg':
         ensure: present
         description: 'PBG security group'
-        region: "%{hiera('region')}"
+        region: "%{lookup('region')}"
         vpc: 'pbg-vpc'
         ingress:
           - protocol: 'tcp'
@@ -43,10 +43,10 @@
     'ec2_instance':
       'pbg-demo':
         ensure: present
-        region: "%{hiera('region')}"
+        region: "%{lookup('region')}"
         subnet: 'pbg-subnet'
         security_groups: 'pbg-vpc-sg'
-        image_id: "%{hiera('ami')}"
+        image_id: "%{lookup('ami')}"
         instance_type: 't1.micro'
         associate_public_ip_address: true
         key_name: 'pbg'

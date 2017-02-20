@@ -1,4 +1,4 @@
 file { '/tmp/sshd_config_example':
   content => epp('/vagrant/examples/template_hiera_params.epp',
-    { 'users' => hiera('users') })
+    { 'users' => lookup('users') })
 }
