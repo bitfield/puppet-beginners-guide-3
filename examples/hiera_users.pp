@@ -1,4 +1,4 @@
-hiera('users').each | String $username | {
+lookup('users').each | String $username | {
   user { $username:
     ensure => present,
   }

@@ -1,3 +1,3 @@
-file { hiera('backup_path'):
+file { lookup('backup_path'):
   ensure => directory,
 }

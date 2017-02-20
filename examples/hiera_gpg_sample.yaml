@@ -3,9 +3,9 @@
   - yaml
   - eyaml
 :yaml:
-  :datadir: "/etc/puppetlabs/code/environments/%{environment}/hieradata"
+  :datadir: "/etc/puppetlabs/code/environments/%{environment}/data"
 :eyaml:
-  :datadir: "/etc/puppetlabs/code/environments/%{environment}/hieradata"
+  :datadir: "/etc/puppetlabs/code/environments/%{environment}/data"
   :gpg_gnupghome: '/home/vagrant/.gnupg'
 :hierarchy:
   - secret

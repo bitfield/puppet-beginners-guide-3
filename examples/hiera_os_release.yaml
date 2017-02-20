@@ -1,3 +1,12 @@
-:hierarchy:
-  - os/"%{facts.os.release.major}"
-  - common
+---
+version: 5
+
+defaults:
+  datadir: data
+  data_hash: yaml_data
+
+hierarchy:
+  - name: "OS-specific data"
+    path: "os/%{facts.os.release.major}.yaml"
+  - name: "Common defaults"
+    path: "common.yaml"
