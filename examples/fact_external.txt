@@ -1,1 +1,1 @@
-role=web
+cloud=aws
