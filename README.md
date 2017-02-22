@@ -30,7 +30,7 @@ If you're new to Puppet, a great way to try it out quickly is to use a Vagrant v
   1. You now have a command line shell on the VM. Check that Puppet is installed and working:
 
         puppet --version
-        4.5.1
+        4.9.2
 
   1. Try the 'Hello, world' example:
 
