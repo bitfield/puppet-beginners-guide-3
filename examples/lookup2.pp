@@ -1,6 +1,6 @@
 $apache_pkg = lookup('apache_pkg')
 
-unless lookup('apparmor') {
+unless lookup('apparmor_enabled') {
   exec { 'apt-get -y remove apparmor': }
 }
 
