@@ -10,8 +10,8 @@ forge "https://forgeapi.puppetlabs.com"
 # modulefile
 
 # A module from the Puppet Forge
-mod 'puppet-archive', '1.1.2'
-mod 'puppetlabs-stdlib', '4.13.0'
+mod 'puppet-archive', '1.3.0'
+mod 'puppetlabs-stdlib', '4.15.0'
 
 # A module from git
 # mod 'puppetlabs-ntp',
