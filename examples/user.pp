@@ -1,6 +1,12 @@
-user { 'www-data':
+group { 'devs':
   ensure => present,
-  uid    => '33',
-  home   => '/var/www',
-  shell  => '/usr/sbin/nologin',
+  gid    => 3000,
+}
+
+user { 'hsing-hui':
+  ensure => present,
+  uid    => '3001',
+  home   => '/home/hsing-hui',
+  shell  => '/bin/bash',
+  groups => ['devs'],
 }
