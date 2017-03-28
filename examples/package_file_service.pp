@@ -1,5 +1,6 @@
 package { 'mysql-server':
   ensure => installed,
+  notify => Service['mysql'],
 }
 
 file { '/etc/mysql/mysql.cnf':
