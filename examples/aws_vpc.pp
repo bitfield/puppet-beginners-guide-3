@@ -43,9 +43,10 @@ ec2_securitygroup { 'pbg-vpc-sg':
   region      => $region,
   vpc         => 'pbg-vpc',
   ingress     =>  [{
-    protocol => 'tcp',
-    port     => 22,
-    cidr     => '0.0.0.0/0',
+    description => 'SSH access from world',
+    protocol    => 'tcp',
+    port        => 22,
+    cidr        => '0.0.0.0/0',
   }],
 }
 

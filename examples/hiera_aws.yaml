@@ -37,7 +37,8 @@
         region: "%{lookup('region')}"
         vpc: 'pbg-vpc'
         ingress:
-          - protocol: 'tcp'
+          - description: 'SSH access from world'
+            protocol: 'tcp'
             port: 22
             cidr: '0.0.0.0/0'
     'ec2_instance':
