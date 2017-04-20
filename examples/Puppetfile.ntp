@@ -1,4 +1,6 @@
 mod 'puppetlabs/stdlib', '4.15.0'
 
 mod 'pbg/ntp',
-  :git => 'https://github.com/bitfield/pbg-ntp.git'
+  :git => 'https://github.com/bitfield/pbg-ntp.git',
+  :tag => '0.1.1'
+
