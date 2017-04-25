@@ -1,10 +1,30 @@
 ---
-  backup_path: '/backup'
-  backup_retention_days: 10
-  gitlab_backup_path: '/backup/gitlab'
-  gitlab_retention_days: 5
-  php: 'php56w'
-  upload_max_filesize: '10M'
-  post_max_size: '10M'
+  test: 'This is a test'
   consul_node: true
+  apache_pkg: 'apache2'
   apache_worker_factor: 100
+  apparmor_enabled: true
+  syslog_server: '10.170.81.32'
+  monitor_ips:
+    - '10.179.203.46'
+    - '212.100.235.160'
+    - '10.181.120.77'
+    - '94.236.56.148'
+  cobbler_config:
+    manage_dhcp: 1
+    pxe_just_once: 1
+  domain: 'bitfieldconsulting.com'
+  servername: 'www.bitfieldconsulting.com'
+  port: 80
+  docroot: '/var/www/bitfieldconsulting.com'
+  dns_allow_query: true
+  backup_retention_days: 10
+  backup_path: "/backup/%{facts.networking.hostname}"
+  ips:
+    home: '130.190.0.1'
+    office1: '74.12.203.14'
+    office2: '95.170.0.75'
+  firewall_allow_list:
+    - "%{lookup('ips.home')}"
+    - "%{lookup('ips.office1')}"
+    - "%{lookup('ips.office2')}"

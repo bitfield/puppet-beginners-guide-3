@@ -1,1 +1,1 @@
-notice(lookup('monitoring_checks', Array, 'unique'))
+notice(lookup('firewall_allow_list', Array, 'unique'))

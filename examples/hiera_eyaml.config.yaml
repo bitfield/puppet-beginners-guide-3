@@ -1,0 +1,15 @@
+---
+version: 5
+
+defaults:
+  datadir: data
+  data_hash: yaml_data
+
+hierarchy:
+  - name: "Common defaults"
+    path: "common.yaml"
+  - name: "Per-datacenter secret data (encrypted)"
+    lookup_key: eyaml_lookup_key
+    path: "secret.eyaml"
+    options:
+      gpg_gnupghome: '/home/vagrant/.gnupg'
