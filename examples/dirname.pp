@@ -1,2 +1,4 @@
 $file = '/var/www/vhosts/mysite'
-notice(dirname($file)) # => '/var/www/vhosts'
+notice(dirname($file))
+
+# Result: '/var/www/vhosts'

@@ -1,2 +1,4 @@
 $remote_host = ''
-notice(pick($remote_host, 'localhost')) # => 'localhost'
+notice(pick($remote_host, 'localhost'))
+
+# Result: 'localhost'
