@@ -5,7 +5,10 @@ file { '/usr/local/bin/stop_and_remove_image':
 
 file { '/tmp/Dockerfile.nginx':
   content => epp('/vagrant/examples/Dockerfile.website.epp',
-                  { 'git_url' => 'https://github.com/bitfield/pbg-website.git' }),
+    {
+      'git_url' => 'https://github.com/bitfield/pbg-website.git'
+    }
+  ),
   notify  => Exec['refresh-pbg-nginx'],
 }
 

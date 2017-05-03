@@ -5,7 +5,10 @@ class ntp2 (
   Enum['running', 'stopped'] $service_state = 'running',
 ) {
   ensure_packages(['ntp'],
-    { 'ensure' => $version })
+    {
+      'ensure' => $version,
+    }
+  )
 
   service { 'ntp':
     ensure => $service_state,

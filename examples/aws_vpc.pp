@@ -21,7 +21,8 @@ ec2_vpc_routetable { 'pbg-rt':
     {
       destination_cidr_block => '10.0.0.0/16',
       gateway                => 'local'
-    },{
+    },
+    {
       destination_cidr_block => '0.0.0.0/0',
       gateway                => 'pbg-igw'
     },
@@ -42,12 +43,14 @@ ec2_securitygroup { 'pbg-vpc-sg':
   description => 'PBG security group',
   region      => $region,
   vpc         => 'pbg-vpc',
-  ingress     =>  [{
-    description => 'SSH access from world',
-    protocol    => 'tcp',
-    port        => 22,
-    cidr        => '0.0.0.0/0',
-  }],
+  ingress     =>  [
+    {
+      description => 'SSH access from world',
+      protocol    => 'tcp',
+      port        => 22,
+      cidr        => '0.0.0.0/0',
+    }
+  ],
 }
 
 ec2_instance { 'pbg-demo':

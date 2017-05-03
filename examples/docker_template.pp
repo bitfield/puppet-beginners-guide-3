@@ -5,7 +5,10 @@ file { '/usr/local/bin/stop_and_remove_image':
 
 file { '/tmp/Dockerfile.nginx':
   content => epp('/vagrant/examples/Dockerfile.nginx.epp',
-                  { 'message' => 'Containers rule!' }),
+    {
+      'message' => 'Containers rule!'
+    }
+  ),
   notify  => Exec['refresh-pbg-nginx'],
 }
 
