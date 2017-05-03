@@ -1,5 +1,5 @@
 # Manage NTP
-class ntp (
+class ntp2 (
   Boolean $start_at_boot,
   String[1] $version = 'installed',
   Enum['running', 'stopped'] $service_state = 'running',
@@ -13,7 +13,7 @@ class ntp (
   }
 }
 
-class { 'ntp':
+class { 'ntp2':
   start_at_boot => true,
   service_state => 'running',
 }

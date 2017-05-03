@@ -1,5 +1,7 @@
 # Manage NTP
-class ntp (String $version = 'installed') {
+class ntp (
+  String $version = 'installed',
+) {
   ensure_packages(['ntp'],
     { 'ensure' => $version })
 }
