@@ -15,6 +15,7 @@ define user_with_key(
 ) {
   user { $title:
     ensure     => present,
+    home       => "/home/${title}",
     managehome => true,
   }
 
