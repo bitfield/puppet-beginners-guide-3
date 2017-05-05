@@ -1,7 +1,17 @@
 # Manage user and SSH key together
 define user_with_key(
-  String $key_type,
-  String $key,
+  Enum[
+    'ssh-dss',
+    'dsa',
+    'ssh-rsa',
+    'rsa',
+    'ecdsa-sha2-nistp256',
+    'ecdsa-sha2-nistp384',
+    'ecdsa-sha2-nistp521',
+    'ssh-ed25519',
+    'ed25519'
+  ] $key_type,
+  String[1] $key,
 ) {
   user { $title:
     ensure     => present,
