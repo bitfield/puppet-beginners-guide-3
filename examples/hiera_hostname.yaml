@@ -7,6 +7,6 @@ defaults:
 
 hierarchy:
   - name: "Host-specific data"
-    path: "nodes/%{facts.networking.hostname}.yaml"
+    path: "nodes/%{facts.hostname}.yaml"
   - name: "Common defaults"
     path: "common.yaml"

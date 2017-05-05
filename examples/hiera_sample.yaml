@@ -19,7 +19,7 @@
   docroot: '/var/www/bitfieldconsulting.com'
   dns_allow_query: true
   backup_retention_days: 10
-  backup_path: "/backup/%{facts.networking.hostname}"
+  backup_path: "/backup/%{facts.hostname}"
   ips:
     home: '130.190.0.1'
     office1: '74.12.203.14'
