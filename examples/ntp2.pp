@@ -18,5 +18,6 @@ class ntp2 (
 
 class { 'ntp2':
   start_at_boot => true,
-  service_state => 'running',
+  version       => latest,
+  service_state => running,
 }
