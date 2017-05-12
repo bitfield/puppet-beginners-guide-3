@@ -1,5 +1,7 @@
-<% if $primary_db_server { -%>
-archive_mode = on
-<% } else {-%>
-archive_mode = off
+<% if $ssl_enabled { -%>
+  ## SSL directives
+  SSLEngine on
+  SSLCertificateFile      "<%= $ssl_cert %>"
+  SSLCertificateKeyFile   "<%= $ssl_key %>"
+  ...
 <% } -%>
