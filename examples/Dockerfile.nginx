@@ -1,5 +1,5 @@
 FROM nginx:1.13.0-alpine
-RUN echo "Goodby, world" >/usr/share/nginx/html/index.html
+RUN echo "Hello, world" >/usr/share/nginx/html/index.html
 
 LABEL org.label-schema.vendor="Bitfield Consulting" \
   org.label-schema.url="http://bitfieldconsulting.com" \
