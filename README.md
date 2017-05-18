@@ -19,8 +19,7 @@ If you're new to Puppet, a great way to try it out quickly is to use a Vagrant v
 
     vagrant plugin install vagrant-vbguest
     vagrant up
-
-  Vagrant will begin downloading the base box, which is an Ubuntu 16.04 image pre-installed with Puppet. This may take a while, but once the download is complete the virtual machine will start, and you will see this message:
+    ...
 
     Machine booted and ready!
 
