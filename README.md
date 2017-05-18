@@ -17,29 +17,42 @@ If you're new to Puppet, a great way to try it out quickly is to use a Vagrant v
 
   1. In the `puppet-beginners-guide` repo directory, run:
 
-        vagrant up
+    vagrant plugin install vagrant-vbguest
+    vagrant up
 
-    Vagrant will begin downloading the base box, which is an Ubuntu 16.04 image pre-installed with Puppet. This may take a while, but once the download is complete the virtual machine will start, and you will see this message:
+  Vagrant will begin downloading the base box, which is an Ubuntu 16.04 image pre-installed with Puppet. This may take a while, but once the download is complete the virtual machine will start, and you will see this message:
 
-        Machine booted and ready!
+    Machine booted and ready!
 
   1. Connect to the VM with the following command:
 
-        vagrant ssh
+    vagrant ssh
 
   1. You now have a command line shell on the VM. Check that Puppet is installed and working:
 
-        puppet --version
-        4.9.2
+    puppet --version
+    4.9.2
 
   1. Try the 'Hello, world' example:
 
-        puppet apply /vagrant/examples/file_hello.pp
-        Notice: Compiled catalog for localhost in environment production in 0.07 seconds
-        Notice: /Stage[main]/Main/File[/tmp/hello.txt]/ensure: defined content as '{md5}22c3683b094136c3398391ae71b20f04'
-        Notice: Applied catalog in 0.01 seconds
+    puppet apply /vagrant/examples/file_hello.pp
+    Notice: Compiled catalog for localhost in environment production in 0.07 seconds
+    Notice: /Stage[main]/Main/File[/tmp/hello.txt]/ensure: defined content as '{md5}22c3683b094136c3398391ae71b20f04'
+    Notice: Applied catalog in 0.01 seconds
 
-        cat /tmp/hello.txt
-        hello, world
+    cat /tmp/hello.txt
+    hello, world
+
+  1. To make sure you have the latest version of Puppet installed, run the following commands (answer `y` to any prompts):
+
+    curl https://apt.puppetlabs.com/DEB-GPG-KEY-puppet |sudo apt-key add
+    sudo apt-get update
+    sudo apt-get install -y puppetlabs-release-pc1
+    sudo apt-get install -y puppet-agent
+
+  1. To check that Puppet is installed and working, run this command (you may get a different version number, which is fine):
+
+    sudo /opt/puppetlabs/bin/puppet --version
+    4.10.0
 
   1. Well, that was easy! Reward yourself with a big cup of tea and a slice of cake. It's important to keep your strength up. 
