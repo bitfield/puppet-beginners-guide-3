@@ -18,7 +18,6 @@ ec2_securitygroup { 'pbg-sg':
       protocol    => 'icmp',
       cidr        => '0.0.0.0/0',
     },
-
   ],
 }
 
