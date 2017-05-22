@@ -4,7 +4,7 @@ $region = 'us-east-1'
 ec2_vpc { 'pbg-vpc':
   ensure     => present,
   region     => $region,
-  cidr_block => '10.0.0.0/16',
+  cidr_block => '10.99.0.0/16',
 }
 
 ec2_vpc_internet_gateway { 'pbg-igw':
@@ -19,7 +19,7 @@ ec2_vpc_routetable { 'pbg-rt':
   vpc    => 'pbg-vpc',
   routes => [
     {
-      destination_cidr_block => '10.0.0.0/16',
+      destination_cidr_block => '10.99.0.0/16',
       gateway                => 'local'
     },
     {
@@ -29,11 +29,11 @@ ec2_vpc_routetable { 'pbg-rt':
   ],
 }
 
-ec2_vpc_subnet { 'pbg-subnet':
+ec2_vpc_subnet { 'pbg-vpc-subnet':
   ensure            => present,
   vpc               => 'pbg-vpc',
   region            => $region,
-  cidr_block        => '10.0.0.0/24',
+  cidr_block        => '10.99.0.0/24',
   availability_zone => "${region}a",
   route_table       => 'pbg-rt',
 }
@@ -43,20 +43,25 @@ ec2_securitygroup { 'pbg-vpc-sg':
   description => 'PBG security group',
   region      => $region,
   vpc         => 'pbg-vpc',
-  ingress     =>  [
+  ingress     => [
     {
       description => 'SSH access from world',
       protocol    => 'tcp',
       port        => 22,
       cidr        => '0.0.0.0/0',
-    }
+    },
+    {
+      description => 'Ping access from world',
+      protocol    => 'icmp',
+      cidr        => '0.0.0.0/0',
+    },
   ],
 }
 
-ec2_instance { 'pbg-demo':
+ec2_instance { 'pbg-vpc-demo':
   ensure                      => present,
   region                      => $region,
-  subnet                      => 'pbg-subnet',
+  subnet                      => 'pbg-vpc-subnet',
   security_groups             => 'pbg-vpc-sg',
   image_id                    => $ami,
   instance_type               => 't1.micro',
