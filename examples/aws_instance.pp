@@ -6,12 +6,20 @@ ec2_securitygroup { 'pbg-sg':
   description => 'PBG security group',
   region      => $region,
   vpc         => 'default-vpc',
-  ingress     => [{
-    description => 'SSH access from world',
-    protocol    => 'tcp',
-    port        => 22,
-    cidr        => '0.0.0.0/0',
-  }],
+  ingress     => [
+    {
+      description => 'SSH access from world',
+      protocol    => 'tcp',
+      port        => 22,
+      cidr        => '0.0.0.0/0',
+    },
+    {
+      description => 'Ping access from world',
+      protocol    => 'icmp',
+      cidr        => '0.0.0.0/0',
+    },
+
+  ],
 }
 
 ec2_instance { 'pbg-demo':
