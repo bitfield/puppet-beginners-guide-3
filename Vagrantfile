@@ -13,8 +13,8 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   # If you have trouble running the 64-bit Vagrant VM, try this instead:
-  # config.vm.box = "puppetlabs/ubuntu-16.04-32-puppet"
-  config.vm.box = "puppetlabs/ubuntu-16.04-64-puppet"
+  # config.vm.box = "ubuntu/xenial32"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -70,4 +70,5 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+  config.vm.provision "shell", path: "scripts/vagrant_provision.sh"
 end
