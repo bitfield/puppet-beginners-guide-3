@@ -9,7 +9,7 @@ If you're already using Puppet, you can dive straight in and look at the example
 
 Throughout the book, we'll be developing a complete, working example infrastructure, which you can use as a basis for your own. You can view and download it at the [Puppet 5 Beginner's Guide demo repo](https://github.com/bitfield/control-repo-3).
 
-If you're new to Puppet, a great way to try it out quickly is to use a Vagrant virtual machine, which will run on your own computer, and there's a specific [Vagrant image](https://app.vagrantup.com/ubuntu/boxes/trusty64) recommended for use with this book. Follow the instructions below to install Virtualbox and Vagrant, and you'll be able to run the examples in this repo in just a few minutes.
+If you're new to Puppet, a great way to try it out quickly is to use a Vagrant virtual machine, which will run on your own computer, and there's a specific [Vagrant image](https://app.vagrantup.com/ubuntu/boxes/xenial64) recommended for use with this book. Follow the instructions below to install Virtualbox and Vagrant, and you'll be able to run the examples in this repo in just a few minutes.
 
 Download and install [Virtualbox](https://www.virtualbox.org/).
 
