@@ -2,7 +2,7 @@ package { 'ruby':
   ensure => installed,
 }
 
-package { 'bundler':
+package { 'puppet-lint':
   ensure   => installed,
   provider => gem,
 }

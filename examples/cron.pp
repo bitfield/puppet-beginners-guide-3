@@ -1,6 +1,6 @@
 cron { 'cron example':
   command     => '/bin/date +%F',
-  user        => 'vagrant',
+  user        => 'ubuntu',
   environment => ['MAILTO=john@bitfieldconsulting.com', 'PATH=/bin'],
   hour        => '0',
   minute      => '0',

@@ -1,4 +1,4 @@
-file { '/etc/owned_by_vagrant':
+file { '/etc/owned_by_ubuntu':
   ensure => present,
-  owner  => 'vagrant',
+  owner  => 'ubuntu',
 }
