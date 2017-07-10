@@ -1,3 +1,3 @@
-file { lookup('backup_path'):
+file { lookup('backup_path', String):
   ensure => directory,
 }

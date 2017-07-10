@@ -11,8 +11,8 @@
     - '10.181.120.77'
     - '94.236.56.148'
   cobbler_config:
-    manage_dhcp: 1
-    pxe_just_once: 1
+    manage_dhcp: true
+    pxe_just_once: true
   domain: 'bitfieldconsulting.com'
   servername: 'www.bitfieldconsulting.com'
   port: 80
@@ -28,3 +28,17 @@
     - "%{lookup('ips.home')}"
     - "%{lookup('ips.office1')}"
     - "%{lookup('ips.office2')}"
+  vpn_allow_list: "%{alias('firewall_allow_list')}"
+  cms_parameters:
+    static:
+      sites_root: '/var/www/sites'
+      assets_root: 'files'
+      web_root: 'public_html'
+    laravel:
+      sites_root: '/var/www/sites'
+      assets_root: 'public_html/files'
+      web_root: 'current/public'
+  force_www_rewrite:
+    comment: "Force WWW"
+    rewrite_cond: "%{literal('%')}{HTTP_HOST} !^www\\. [NC]"
+    rewrite_rule: "^(.*)$ https://www.%{literal('%')}{HTTP_HOST}%{literal('%')}{REQUEST_URI} [R=301,L]"
