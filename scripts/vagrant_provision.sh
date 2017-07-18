@@ -1,7 +1,7 @@
 #!/bin/bash
 source /etc/lsb-release
-wget https://apt.puppetlabs.com/puppet5-release-${DISTRIB_CODENAME}.deb
-dpkg -i puppet5-release-${DISTRIB_CODENAME}.deb
+wget https://apt.puppetlabs.com/puppet-release-${DISTRIB_CODENAME}.deb
+dpkg -i puppet-release-${DISTRIB_CODENAME}.deb
 apt-get update
 apt-get -y install git puppet-agent
 echo 'Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/opt/puppetlabs/bin"' >/etc/sudoers.d/puppet
