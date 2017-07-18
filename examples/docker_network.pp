@@ -8,7 +8,7 @@ docker::run { 'pbg-redis':
 }
 
 docker::image { 'pbg-demo':
-  docker_file => '/vagrant/examples/Dockerfile.pbg-demo',
+  docker_file => '/examples/Dockerfile.pbg-demo',
   ensure      => latest,
 }
 

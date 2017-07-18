@@ -1,0 +1,23 @@
+---
+version: 5
+
+defaults:
+  datadir: data
+  data_hash: yaml_data
+
+hierarchy:
+  - name: "Secret data (encrypted)"
+    lookup_key: eyaml_lookup_key
+    path: "secret.eyaml"
+    options:
+      gpg_gnupghome: '/home/ubuntu/.gnupg'
+  - name: "AWS resources"
+    path: "aws.yaml"
+  - name: "Host-specific data"
+    path: "nodes/%{facts.hostname}.yaml"
+  - name: "OS release-specific data"
+    path: "os/%{facts.os.release.major}.yaml"
+  - name: "OS distro-specific data"
+    path: "os/%{facts.os.distro.codename}.yaml"
+  - name: "Common defaults"
+    path: "common.yaml"

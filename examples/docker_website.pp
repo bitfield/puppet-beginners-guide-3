@@ -1,5 +1,5 @@
 file { '/tmp/Dockerfile.nginx':
-  content => epp('/vagrant/examples/Dockerfile.website.epp',
+  content => epp('/examples/Dockerfile.website.epp',
     {
       'git_url' => 'https://github.com/bitfield/pbg-website.git'
     }

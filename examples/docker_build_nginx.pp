@@ -1,5 +1,5 @@
 file { '/tmp/Dockerfile.nginx':
-  source => '/vagrant/examples/Dockerfile.nginx',
+  source => '/examples/Dockerfile.nginx',
   notify => Docker::Image['pbg-nginx'],
 }
 

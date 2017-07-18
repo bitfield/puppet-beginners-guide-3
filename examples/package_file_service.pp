@@ -4,7 +4,7 @@ package { 'mysql-server':
 }
 
 file { '/etc/mysql/mysql.cnf':
-  source => '/vagrant/examples/files/mysql.cnf',
+  source => '/examples/files/mysql.cnf',
   notify => Service['mysql'],
 }
 

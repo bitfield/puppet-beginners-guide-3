@@ -1,5 +1,5 @@
 file { '/tmp/Dockerfile.nginx':
-  content => epp('/vagrant/examples/Dockerfile.nginx.epp',
+  content => epp('/examples/Dockerfile.nginx.epp',
     {
       'message' => 'Containers rule!'
     }

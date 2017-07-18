@@ -1,4 +1,4 @@
 docker::image { 'pbg-hello':
-  docker_file => '/vagrant/examples/Dockerfile.hello',
+  docker_file => '/examples/Dockerfile.hello',
   ensure      => latest,
 }

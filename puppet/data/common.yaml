@@ -42,3 +42,30 @@
     comment: "Force WWW"
     rewrite_cond: "%{literal('%')}{HTTP_HOST} !^www\\. [NC]"
     rewrite_rule: "^(.*)$ https://www.%{literal('%')}{HTTP_HOST}%{literal('%')}{REQUEST_URI} [R=301,L]"
+  users:
+    - 'katy'
+    - 'lark'
+    - 'bridget'
+    - 'hsing-hui'
+    - 'charles'
+  users2:
+    'katy':
+      ensure: present
+      uid: 1900
+      shell: '/bin/bash'
+    'lark':
+      ensure: present
+      uid: 1901
+      shell: '/bin/sh'
+    'bridget':
+      ensure: present
+      uid: 1902
+      shell: '/bin/bash'
+    'hsing-hui':
+      ensure: present
+      uid: 1903
+      shell: '/bin/sh'
+    'charles':
+      ensure: present
+      uid: 1904
+      shell: '/bin/bash'
