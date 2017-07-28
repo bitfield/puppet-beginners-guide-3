@@ -1,7 +1,6 @@
 ---
   test: 'This is a test'
   consul_node: true
-  apache_pkg: 'apache2'
   apache_worker_factor: 100
   apparmor_enabled: true
   syslog_server: '10.170.81.32'
