@@ -1,5 +1,5 @@
-ensure_packages(['rake'],
+ensure_packages(['cowsay'],
   {
-    'provider' => 'gem',
+    'ensure' => 'latest',
   }
 )
