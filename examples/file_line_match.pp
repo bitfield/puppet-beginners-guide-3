@@ -1,5 +1,5 @@
 file_line { 'set root email alias':
   path  => '/etc/aliases',
-  line  => 'root: john@bitfieldconsulting.com',
+  line  => 'root: admin@example.com',
   match => '^root: ',
 }

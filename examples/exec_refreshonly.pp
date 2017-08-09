@@ -3,7 +3,7 @@ package { 'postfix':
 }
 
 file { '/etc/aliases':
-  content => 'root: john@bitfieldconsulting.com',
+  content => 'root: admin@example.com',
   notify  => Exec['newaliases'],
 }
 
