@@ -1,5 +1,5 @@
-file_line { 'set root email alias':
-  path  => '/etc/aliases',
-  line  => 'root: admin@example.com',
-  match => '^root: ',
+file_line { 'adjust ulimits':
+  path  => '/etc/security/limits.conf',
+  line  => 'www-data         -       nofile          9999',
+  match => '^www-data .* nofile',
 }
