@@ -1,8 +1,5 @@
 # Install MySQL and set up an example database
-class { 'mysql::server':
-  root_password           => 'correct horse battery staple',
-  remove_default_accounts => true,
-}
+include mysql::server
 
 mysql::db { 'cat_pictures':
   user     => 'greebo',

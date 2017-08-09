@@ -1,6 +1,4 @@
-class { 'apache':
-  default_vhost => false,
-}
+include apache
 
 apache::vhost { 'cat-pictures.com':
   port          => '80',
