@@ -14,4 +14,4 @@ mod 'stahnma/epel', '1.2.2'
 
 mod 'pbg_ntp',
   :git => 'https://github.com/bitfield/pbg_ntp.git',
-  :tag => '0.1.2'
+  :tag => '0.1.4'
