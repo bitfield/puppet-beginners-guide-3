@@ -1,5 +1,0 @@
-forge 'http://forge.puppetlabs.com'
-
-mod 'puppet/staging', '2.2.0'
-mod 'puppetlabs/mysql', '3.11.0'
-mod 'puppetlabs/stdlib', '4.17.0'
