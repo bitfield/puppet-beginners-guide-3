@@ -1,5 +1,5 @@
 # Manage NTP
-class ntp (
+class pbg_ntp_params (
   String $version = 'installed',
 ) {
   ensure_packages(['ntp'],
@@ -7,8 +7,4 @@ class ntp (
       'ensure' => $version,
     }
   )
-}
-
-class { 'ntp':
-  version => 'latest',
 }

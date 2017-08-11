@@ -1,5 +1,5 @@
 # Manage NTP
-class ntp2 (
+class pbg_ntp_params2 (
   Boolean $start_at_boot,
   String[1] $version = 'installed',
   Enum['running', 'stopped'] $service_state = 'running',
