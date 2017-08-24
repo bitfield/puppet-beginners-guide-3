@@ -6,7 +6,3 @@ class role::app_server {
   include tomcat
   include my_app
 }
-
-node 'app1' {
-  include role::app_server
-}
