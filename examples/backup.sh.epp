@@ -1,0 +1,4 @@
+<%- | String $data_dir | -%>
+#!/bin/bash
+mkdir -p /backup
+tar cvzf /backup/backup.tar.gz <%= $data_dir %>
