@@ -16,8 +16,4 @@ class pbg_ntp_params2 (
   }
 }
 
-class { 'ntp2':
-  start_at_boot => true,
-  version       => latest,
-  service_state => running,
-}
+include pbg_ntp_params2

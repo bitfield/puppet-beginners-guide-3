@@ -8,3 +8,5 @@ class pbg_ntp_params (
     }
   )
 }
+
+include pbg_ntp_params

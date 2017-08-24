@@ -71,3 +71,7 @@
   mysql::server::root_password: 'hairline-quotient-inside-tableful'
   mysql::server::remove_default_accounts: true
   apache::default_vhost: false
+  pbg_ntp_params::version: 'latest'
+  pbg_ntp_params2::start_at_boot: true
+  pbg_ntp_params2::version: 'latest'
+  pbg_ntp_params2::service_state: 'running'
