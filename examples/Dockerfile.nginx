@@ -1,4 +1,4 @@
-FROM nginx:1.13.0-alpine
+FROM nginx:1.13.3-alpine
 RUN echo "Hello, world" >/usr/share/nginx/html/index.html
 
 LABEL org.label-schema.vendor="Bitfield Consulting" \

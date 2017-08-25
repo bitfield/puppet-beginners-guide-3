@@ -1,5 +1,5 @@
 <% | String $message | -%>
-FROM nginx:1.13.0-alpine
+FROM nginx:1.13.3-alpine
 RUN echo "<%= $message %>" >/usr/share/nginx/html/index.html
 
 LABEL org.label-schema.vendor="Bitfield Consulting" \

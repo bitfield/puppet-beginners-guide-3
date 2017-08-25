@@ -1,5 +1,5 @@
 <% | String $git_url | -%>
-FROM nginx:1.13.0-alpine
+FROM nginx:1.13.3-alpine
 RUN apk update \
   && apk add git \
   && cd /usr/share/nginx \

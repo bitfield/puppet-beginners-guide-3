@@ -10,4 +10,11 @@ file { '/tmp/Dockerfile.nginx':
 docker::image { 'pbg-nginx':
   docker_file => '/tmp/Dockerfile.nginx',
   ensure      => latest,
+  notify      => Docker::Run['pbg-nginx'],
+}
+
+docker::run { 'pbg-nginx':
+  image         => 'pbg-nginx:latest',
+  ports         => ['80:80'],
+  pull_on_start => true,
 }

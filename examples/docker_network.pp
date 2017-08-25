@@ -3,7 +3,7 @@ docker_network { 'pbg-net':
 }
 
 docker::run { 'pbg-redis':
-  image => 'redis:alpine',
+  image => 'redis:4.0.1-alpine',
   net   => 'pbg-net',
 }
 
