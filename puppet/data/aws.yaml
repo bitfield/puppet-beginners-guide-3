@@ -1,5 +1,5 @@
 ---
-  ami: 'YOUR_AMI_ID'
+  ami: 'ami-933105e8'
   region: 'us-east-1'
   aws_resources:
     'ec2_vpc':

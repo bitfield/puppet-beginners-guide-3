@@ -1,4 +1,4 @@
-$ami = 'YOUR_AMI_ID'
+$ami = 'ami-933105e8'
 $region = 'us-east-1'
 
 ec2_securitygroup { 'pbg-sg':
