@@ -17,8 +17,7 @@ Download and install [Vagrant](https://www.vagrantup.com/downloads.html).
 
 In the `puppet-beginners-guide-3` repo directory, run:
 
-    vagrant plugin install vagrant-vbguest
-    vagrant up
+    scripts/start_vagrant.sh
     ...
 
     Machine booted and ready!
@@ -30,11 +29,11 @@ Connect to the VM with the following command:
 You now have a command line shell on the VM. Check that Puppet is installed and working:
 
     puppet --version
-    5.0.0
+    5.2.0
 
 Try the 'Hello, world' example:
 
-    puppet apply /vagrant/examples/file_hello.pp
+    sudo puppet apply /examples/file_hello.pp
     Notice: Compiled catalog for localhost in environment production in 0.07 seconds
     Notice: /Stage[main]/Main/File[/tmp/hello.txt]/ensure: defined content as '{md5}22c3683b094136c3398391ae71b20f04'
     Notice: Applied catalog in 0.01 seconds
